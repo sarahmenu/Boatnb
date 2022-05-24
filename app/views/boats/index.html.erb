@@ -1,21 +1,20 @@
 <h1>+100 motorboats available</h1>
   <div class="container">
     <div class="row">
-        <% 10.times do%>
+        <% @boats.each do |boat|%>
           <div class="col-6">
-          <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-            <div class="card-trip-infos">
+          <div class="card-boat">
+            <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill  %>
+            <div class="card-boat-infos">
               <div>
-                <h2>Title here</h2>
-                <p>Short description here!</p>
+                <h2><%= boat.name - boat.category %></h2>
+                <p><%=📍 boat.location - boat.description %></p>
               </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <h2 class="card-boat-pricing"><%= boat.price %></h2>
+              <img src="#" class="card-boat-user avatar-bordered" />
+          </div>
           </div>
         </div>
-      </div>
-        
       <% end %>
     </div>
   </div>
