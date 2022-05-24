@@ -1,0 +1,17 @@
+
+<div class="card-trip p-4 bg-gray">
+  <img src="https://media.bateaux.com/src/images/news/articles/ima-beneteau-oceanis-voilier-de-croisiere-33105.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h4 class="py-3"><%= @boat.category %></h4>
+      <h2 class="py-3"><%= @boat.name %></h2>
+      <p class="py-3"><%= @boat.capacity %> Persons </p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @boat.price%> €</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+  <p class="py-3"> <%= @boat.description %> </p>
+  <div class="text-center">
+    <a class="btn btn-flat p-2" href="#">Book now</a>
+  </div>
+</div>

@@ -5,6 +5,11 @@ class BoatsController < ApplicationController
     @boats = Boat.all
   end
 
+  def show
+    @boat = Boat.find(params[:id])
+    render :show
+  end
+
   def new
     @boat = Boat.new
   end
