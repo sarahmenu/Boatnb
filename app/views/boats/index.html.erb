@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
         <% @boats.each do |boat|%>
-          <div class="col-6">
+          <div class="col-sm-12">
           <div class="card-boat">
             <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill  %>
             <div class="card-boat-infos">
               <div>
-                <h2><%= boat.name - boat.category %></h2>
-                <p><%=📍 boat.location - boat.description %></p>
+                <h2><%= boat.name%> : <%=boat.category %></h2>
+                <p><%= boat.location%> : <%=boat.description %></p>
               </div>
               <h2 class="card-boat-pricing"><%= boat.price %></h2>
               <img src="#" class="card-boat-user avatar-bordered" />
