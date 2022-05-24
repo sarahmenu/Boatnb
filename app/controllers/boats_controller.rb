@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @boats = Boat.all
