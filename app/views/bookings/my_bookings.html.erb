@@ -4,8 +4,7 @@
       <h1> Congratulation 🤘! your booking have been accepted</h1>
       <ul class="my-5">
         <% @user_bookings.each do |booking| %>
-
-        You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>
+          <li> You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong></li>
         <% end %>
       </ul>
     </div>

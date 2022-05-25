@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings
   end
-  # get :my_bookings, to: "bookings#my_bookings"
+  get :my_bookings, to: "bookings#my_bookings"
   # namespace :owner do
   #   resources :boats, only: [ :create, :update ]
   #   resources :bookings do
