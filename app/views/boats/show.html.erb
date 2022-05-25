@@ -1,17 +1,29 @@
-<div class="card-trip p-4 bg-gray">
-  <img src="https://media.bateaux.com/src/images/news/articles/ima-beneteau-oceanis-voilier-de-croisiere-33105.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h4 class="py-3"><%= @boat.category %></h4>
-      <h2 class="py-3"><%= @boat.name %></h2>
-      <p class="py-3"><%= @boat.capacity %> Persons </p>
+<div class="card-boat-show">
+  <div class="card-trip p-4 bg-gray p-5">
+    <%= cl_image_tag @boat.photo.key %>
+    <div class="card-trip-infos my-5">
+      <div>
+        <p>⛵ Category : <%= @boat.category %></p>
+        <h1><%= @boat.name %></h1>
+        <p>🧍‍♂️ <%= @boat.capacity %> persons </p>
+        <p>🧑‍✈️ Offered by   </p>
+      </div>
+      <h2 class="card-trip-pricing"><%= @boat.price%> €</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    <h2 class="card-trip-pricing"><%= @boat.price%> €</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
-  <p class="py-3"> <%= @boat.description %> </p>
-  <div class="text-center">
-    <a class="btn btn-flat p-2" href="#">Book now</a>
+    <p class="py-3"> <%= @boat.description %> </p>
+    <div>
+      <h2 class="my-2">Booking conditions:</h2>
+      <p>This boat can be chartered any day of the week for one day or more.</p>
+      <h2 class="my-2">Cancellation policy:</h2>
+      <p>Cancellation conditions Moderate.</p>
+      <p>Moderate: 70% refund up to 10 days before arrival, excluding service fees and commission.</p>
+      <h2 class="my-5">Book this boat :</h2>
+      <%= simple_form_for [@boat, @booking] do |f| %>
+        <%= f.input :start_at, html5: true
+        <%= f.input :end_at, html5: true %>
+         <%= f.button :submit, "Book", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
-
