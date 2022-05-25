@@ -2,13 +2,13 @@
   <div class="container">
     <h1>BoatNb <strong>Share and rent your boat</strong> to <strong>nice people</strong>!</h1>
     <p>share your lifeboat and earn to money all around the world !</p>
-    <a class="btn btn-flat" href="#">Click here to visit us</a>
+    <a class="btn btn-flat" href="#anchor">Click here to visit us</a>
   </div>
 </div>
 <div class="container p-5">
   <div class="row">
     <div class="col text-center">
-      <h2> Rent your boat now ! </h2>
+      <h2 id='anchor'> Rent your boat now ! </h2>
       <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
     </div>
   </div>
@@ -24,7 +24,7 @@
                   <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
                   <h2> <%= boat.name %> </h2>
                   <p class= "text-truncate"> <%= boat.description %> </p>
-                  <%= link_to "Book now", "/" , class:'btn btn-primary'%>
+                  <%= link_to "Book now", boat_path(boat) , class:'btn btn-primary'%>
                 </div>
                 <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
