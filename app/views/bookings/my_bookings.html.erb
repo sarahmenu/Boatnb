@@ -1,3 +1,10 @@
+<h1> My Bookings</h1>
+
+
+<ul>
 <% @user_bookings.each do |booking| %>
-<%= booking.boat.name %>
+  <li>
+    You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.
+  </li>
 <% end %>
+</ul>
