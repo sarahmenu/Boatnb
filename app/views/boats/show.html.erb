@@ -15,3 +15,10 @@
   </div>
 </div>
 
+<h1>Book a boat</h1>
+
+<%= simple_form_for [@boat, @booking] do |f| %>
+  <%= f.input :start_at, html5: true %>
+  <%= f.input :end_at, html5: true %>
+  <%= f.button :submit %>
+<% end %>
