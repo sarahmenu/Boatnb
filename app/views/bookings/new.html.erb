@@ -1,0 +1,8 @@
+<h1>Book a boat</h1>
+
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :start_at, as: :datetime_picker %>
+  <%= f.input :end_at, as: :datetime_picker %>
+  <%= f.button :submit %>
+<% end %>
+
