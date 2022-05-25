@@ -1,3 +1,112 @@
-<h1> Our Landing page </h1>
-
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.picsum.photos/id/1083/5472/3648.jpg?hmac=CtOxgXc6Oe3TQvKBXtPsKVT9Z2Yg7SJKWVlgWPeMBUs);">
+  <div class="container">
+    <h1>BoatNb <strong>Share and rent your boat</strong> to <strong>nice people</strong>!</h1>
+    <p>share your lifeboat and earn to money all around the world !</p>
+    <a class="btn btn-flat" href="#">Click here to visit us</a>
+  </div>
+</div>
+<div class="container p-5">
+  <div class="row">
+    <div class="col text-center">
+      <h2> Rent your boat now ! </h2>
+      <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
+    </div>
+  </div>
+</div>
+<div class="container p-5">
+  <div class="row">
+    <% @boats.each do |boat| %>
+      <div class="col-12 col-md-3">
+        <div class="card-trip">
+        <%= %>
+          <img src=" <%= boat.photo.key %> " />
+          <div class="card-trip-infos">
+            <div>
+              <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
+              <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
+              <h2> <%= boat.name %> </h2>
+              <p class= "text-truncate"> <%= boat.description %> </p>
+            </div>
+            <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container p-5">
+  <div class="row">
+    <div class="col text-center">
+      <h2> Must viewed locations </h2>
+      <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
+    </div>
+  </div>
+</div>
+<div class="container p-5">
+  <div class="row">
+    <% @boats.each do |boat| %>
+      <div class="col">
+        <div class="cards">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.picsum.photos/id/164/1200/800.jpg?hmac=wkqGUkaeW3kiAsHq_VwxSWWossIMAwFV4eUfFzuDkew)">
+            <%= boat.location %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container p-5">
+  <div class="row">
+    <div class="col text-center">
+      <h2>Customers reviews </h2>
+      <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
+    </div>
+  </div>
+</div>
+<div class="container p-5">
+	<div class="row text-center">
+					<div class="col-sm-12 col-md-4">
+						<div class="testimonial-box">
+							<img src="https://images.pexels.com/photos/206615/pexels-photo-206615.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="" width="90">
+							<div class="ratings-icons">
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+							</div>
+							<h4>James Baker</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sapien augue, dictum et gravida et</p>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<div class="testimonial-box">
+							<img src="https://images.pexels.com/photos/478544/pexels-photo-478544.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="" width="90">
+							<div class="ratings-icons">
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+							</div>
+							<h4>Jon Doe</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sapien augue, dictum et gravida et</p>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<div class="testimonial-box">
+							<img src="https://images.pexels.com/photos/478544/pexels-photo-478544.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="" width="90">
+							<div class="ratings-icons">
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+								<span class="glyphicon glyphicon-star">⭐</span>
+							</div>
+							<h4>Maria Jose</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sapien augue, dictum et gravida et</p>
+						</div>
+					</div>
+				</div>
+</div>
