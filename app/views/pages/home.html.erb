@@ -12,23 +12,23 @@
       <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
     </div>
   </div>
-</div>
-<div class="container p-5">
   <div class="row">
     <% @boats.each do |boat| %>
-      <div class="col-12 col-md-3">
-        <div class="card-trip">
-        <%= %>
-          <img src=" <%= boat.photo.key %> " />
-          <div class="card-trip-infos">
-            <div>
-              <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
-              <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
-              <h2> <%= boat.name %> </h2>
-              <p class= "text-truncate"> <%= boat.description %> </p>
-            </div>
-            <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <div class="col-12 col-md-4">
+        <div class="card-boat-homepage">
+          <div class="card-trip my-2">
+              <%= cl_image_tag boat.photo.key, height: 500, width: 400, crop: :fill  %>
+              <div class="card-trip-infos">
+                <div>
+                  <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
+                  <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
+                  <h2> <%= boat.name %> </h2>
+                  <p class= "text-truncate"> <%= boat.description %> </p>
+                  <%= link_to "Book now", "/" , class:'btn btn-primary'%>
+                </div>
+                <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              </div>
           </div>
         </div>
       </div>
@@ -37,19 +37,18 @@
 </div>
 <div class="container p-5">
   <div class="row">
-    <div class="col text-center">
-      <h2> Must viewed locations </h2>
-      <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
-    </div>
+      <div class="col text-center">
+        <h2> Must viewed locations </h2>
+        <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
+      </div>
   </div>
-</div>
-<div class="container p-5">
   <div class="row">
     <% @boats.each do |boat| %>
-      <div class="col">
-        <div class="cards">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.picsum.photos/id/164/1200/800.jpg?hmac=wkqGUkaeW3kiAsHq_VwxSWWossIMAwFV4eUfFzuDkew)">
-            <%= boat.location %>
+      <div class="col-6  col-md-3">
+        <div class="card bg-dark text-white my-2">
+          <img class="card-img" src="https://i.picsum.photos/id/124/3504/2336.jpg?hmac=B1Avp6or9Df8vpnN4kQsGNfD66j8hH3gLtootCoTw4M" alt="Card image">
+          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            <h2 class="card-title align-middle font-weight-bold"> <%= boat.location %> </h2>
           </div>
         </div>
       </div>
