@@ -20,7 +20,7 @@
       <p>Moderate: 70% refund up to 10 days before arrival, excluding service fees and commission.</p>
       <h2 class="my-5">Book this boat :</h2>
       <%= simple_form_for [@boat, @booking] do |f| %>
-        <%= f.input :start_at, html5: true
+        <%= f.input :start_at, html5: true %>
         <%= f.input :end_at, html5: true %>
          <%= f.button :submit, "Book", class: "btn btn-primary" %>
       <% end %>

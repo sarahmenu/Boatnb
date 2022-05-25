@@ -1,10 +1,13 @@
-<h1> My Bookings</h1>
+<div class="container p-5">
+  <div class="row">
+    <div class="col">
+      <h1> Congratulation 🤘! your booking have been accepted</h1>
+      <ul class="my-5">
+        <% @user_bookings.each do |booking| %>
 
-
-<ul>
-<% @user_bookings.each do |booking| %>
-  <li>
-    You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.
-  </li>
-<% end %>
-</ul>
+        You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
