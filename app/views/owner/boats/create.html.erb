@@ -1,0 +1,11 @@
+<h1>Boats#create</h1>
+<%= simple_form_for([:owner, @boat]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :category, collection: Boat::CATEGORIES, as: :radio_buttons%>
+  <%= f.input :capacity %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
