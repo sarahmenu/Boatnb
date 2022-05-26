@@ -61,7 +61,7 @@ boat_2 = Boat.create!(category: "Sailing ship", name: "Coral - Daikiri", capacit
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396835/Boats/sailing_boat-oceanis_45-4-2014-102836-picture-002_2_ahpdrm.jpg")
 boat_2.photo.attach(io: file, filename: 'sailing_boat-oceanis_45-4-2014-102836-picture-002_2_ahpdrm.jpg', content_type: 'image/jpg')
 
-boat_3 = Boat.create(category: "Sailing ship", name: "Great One - Oceanis 36", capacity: 8, location: "Pornic", price: 1300, description: " It offers a beautiful living space: the saloon with a large bench seat around the table, the television and its sound bar and of course the interior steering position in case of rain. The kitchen equipped with a gas stove with oven, a microwave, fridge-freezer, crockery and kitchen utensils", user_id: user_2.id)
+boat_3 = Boat.create(category: "Sailing ship", name: "Great One - Oceanis 36", capacity: 8, location: "Dunkerque", price: 1300, description: " It offers a beautiful living space: the saloon with a large bench seat around the table, the television and its sound bar and of course the interior steering position in case of rain. The kitchen equipped with a gas stove with oven, a microwave, fridge-freezer, crockery and kitchen utensils", user_id: user_2.id)
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396834/Boats/sailing_boat-elan_50_impression-5-2015-105492-picture-002_leqe5r.jpg")
 boat_3.photo.attach(io: file, filename: 'sailing_boat-elan_50_impression-5-2015-105492-picture-002_leqe5r.jpg', content_type: 'image/jpg')
 
@@ -77,7 +77,7 @@ boat_6 = Boat.create(category: "Sailing ship", name: "The Dark Zone - Dufour 425
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396834/Boats/image2600730_uohuvv.jpg")
 boat_6.photo.attach(io: file, filename: 'image2600730_uohuvv.jpg', content_type: 'image/jpg')
 
-boat_7 = Boat.create(category: "Sailing ship", name: "The Sinked Wagon - Elan 333", capacity: 6, location: "La Turballe", price: 1000, description: "A great sailor ship for family", user_id: user_3.id)
+boat_7 = Boat.create(category: "Sailing ship", name: "The Sinked Wagon - Elan 333", capacity: 6, location: "Cannes", price: 1000, description: "A great sailor ship for family", user_id: user_3.id)
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396833/Boats/55_ohre6r.jpg")
 boat_7.photo.attach(io: file, filename: '55_ohre6r.jpg', content_type: 'image/jpg')
 
