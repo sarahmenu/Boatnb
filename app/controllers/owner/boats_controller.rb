@@ -1,5 +1,7 @@
 class Owner::BoatsController < ApplicationController
-
+  def index
+    @boats = Boat.where(user: current_user)
+  end
 
   def create
     @boat = Boat.new(boat_params)

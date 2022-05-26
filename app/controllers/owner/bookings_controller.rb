@@ -17,6 +17,19 @@ module Owner
     end
 
     def accept
+      @booking = Booking.find(params[:id])
+      @booking.status = "Accepted"
+      @booking.save
+
+      redirect_to my_bookings_path
+    end
+
+    def cancel
+      @booking = Booking.find(params[:id])
+      @booking.status = "Canceled"
+      @booking.save
+
+      redirect_to my_bookings_path
     end
   end
 end

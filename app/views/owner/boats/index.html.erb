@@ -1,0 +1,28 @@
+<h1>My boats</h1>
+<div class="container">
+  <div class="row">
+    <% @boats.each do |boat| %>
+      <div class="col-12 col-md-4">
+        <div class="card-boat-homepage">
+          <div class="card-trip my-2">
+              <%= cl_image_tag boat.photo.key, height: 500, width: 400, crop: :fill  %>
+              <div class="card-trip-infos">
+                <div>
+                  <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
+                  <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
+                  <h2> <%= boat.name %> </h2>
+                  <p class= "text-truncate"> <%= boat.description %> </p>
+                  <%= link_to "Book now", boat_path(boat) , class:'btn btn-primary'%>
+                </div>
+                <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
+                <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
+              </div>
+              <%= link_to 'Create a new boat', new_boat_path, class:'btn btn-primary'%>
+              <%= link_to 'Edit boat',  edit_owner_boat_path(boat), class:'btn btn-success'%>
+              <%= link_to_if !boat.bookings.any?, 'Delete boat',  owner_boat_path(boat) , class:'btn btn-danger',  method: :delete, data:{ confirm: "Are you sure you want to delete this boat?"} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
