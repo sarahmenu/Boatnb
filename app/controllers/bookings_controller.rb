@@ -1,18 +1,9 @@
 class BookingsController < ApplicationController
 
-  def my_bookings
-    @bookings = Booking.all
-    @user_bookings = []
-    @bookings.each do |booking|
-      if booking.user_id == current_user.id
-        @user_bookings << booking
-      end
-    end
-    return @user_bookings
-  end
-
   def index
-    @bookings = Booking.all
+    @tenant_bookings = Booking.where(user: current_user)
+    @my_boats = Boat.where(user: current_user)
+    @owner_bookings = Booking.where(boat: @my_boats)
   end
 
   def new
@@ -45,7 +36,7 @@ class BookingsController < ApplicationController
     if @booking.update(booking_params)
       redirect_to @booking
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
@@ -53,7 +44,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to my_bookings_path
   end
 
   private

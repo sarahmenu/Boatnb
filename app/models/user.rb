@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :boats
+  has_one_attached :photo
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

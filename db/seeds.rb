@@ -15,15 +15,41 @@ User.destroy_all
 
 puts " Creating Users"
 
-user_1 = User.create(first_name: 'Lucas', last_name: 'Vittaz', email: 'lucas@gmail.com', phone: '0685259877', password: "123456")
-user_2 = User.create(first_name: 'Naby', last_name: 'Bathily', email: 'naby@gmail.com', phone: '0625327730', password: "123456")
-user_3 = User.create(first_name: 'Sarah', last_name: 'Menu', email: 'sarah@gmail.com', phone: '0625857768', password: "123456")
-user_4 = User.create(first_name: 'Yohann', last_name: 'Lemasson', email: 'yohann@gmail.com', phone: '0625987768', password: "123456")
-user_5 = User.create(first_name: 'Anthony', last_name: 'Gouvrillon', email: 'anthony@gmail.com', phone: '0625987766', password: "123456")
-user_6 = User.create(first_name: 'Amina', last_name: 'Lagoun', email: 'amina@gmail.com', phone: '0633221255', password: "123456")
-user_7 = User.create(first_name: 'Antoine', last_name: 'Manceau', email: 'antoine@gmail.com', phone: '0640123212', password: "123456")
-user_8 = User.create(first_name: 'Clément', last_name: 'Spiers', email: 'clement@gmail.com', phone: '0633221257', password: "123456")
-user_9 = User.create(first_name: 'Aurore', last_name: 'Rigault', email: 'aurore@gmail.com', phone: '0640123444', password: "123456")
+user_1 = User.create!(first_name: 'Lucas', last_name: 'Vittaz', email: 'lucas@gmail.com', phone: '0685259877', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563293/avatars/lucas_hcxpec.jpg")
+user_1.photo.attach(io: file, filename: 'lucas.jpg', content_type: 'image/jpg')
+
+user_2 = User.create!(first_name: 'Naby', last_name: 'Bathily', email: 'naby@gmail.com', phone: '0625327730', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563292/avatars/naby_bbdweh.jpg")
+user_2.photo.attach(io: file, filename: 'naby.jpg', content_type: 'image/jpg')
+
+user_3 = User.create!(first_name: 'Sarah', last_name: 'Menu', email: 'sarah@gmail.com', phone: '0625857768', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563292/avatars/sarah_x9pipl.jpg")
+user_3.photo.attach(io: file, filename: 'sarah.jpg', content_type: 'image/jpg')
+
+user_4 = User.create!(first_name: 'Yohann', last_name: 'Lemasson', email: 'yohann@gmail.com', phone: '0625987768', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563293/avatars/clement_iy0sng.png")
+user_4.photo.attach(io: file, filename: 'clement.jpg', content_type: 'image/jpg')
+
+user_5 = User.create!(first_name: 'Anthony', last_name: 'Gouvrillon', email: 'anthony@gmail.com', phone: '0625987766', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563293/avatars/anto_lbbmol.jpg")
+user_5.photo.attach(io: file, filename: 'anto.jpg', content_type: 'image/jpg')
+
+user_6 = User.create!(first_name: 'Amina', last_name: 'Lagoun', email: 'amina@gmail.com', phone: '0633221255', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563292/avatars/margaux_n8mpcs.jpg")
+user_6.photo.attach(io: file, filename: 'margaux.jpg', content_type: 'image/jpg')
+
+user_7 = User.create!(first_name: 'Antoine', last_name: 'Manceau', email: 'antoine@gmail.com', phone: '0640123212', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563292/avatars/val_k2pxfv.png")
+user_7.photo.attach(io: file, filename: 'val.jpg', content_type: 'image/jpg')
+
+user_8 = User.create!(first_name: 'Clément', last_name: 'Spiers', email: 'clement@gmail.com', phone: '0633221257', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563293/avatars/audren_bhst48.jpg")
+user_8.photo.attach(io: file, filename: 'audren.jpg', content_type: 'image/jpg')
+
+user_9 = User.create!(first_name: 'Valentin', last_name: 'Chauveau', email: 'valentin@gmail.com', phone: '0640123444', password: "123456")
+file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653563293/avatars/remy_b0gn39.png")
+user_9.photo.attach(io: file, filename: 'remy.jpg', content_type: 'image/jpg')
 
 puts " Creating Boats"
 
@@ -69,9 +95,9 @@ boat_10.photo.attach(io: file, filename: 'princess-s62-3043305022176848665357526
 
 puts " Creating Bookings"
 
-booking_1 = Booking.create!( boat_id: boat_10.id, user_id: user_4.id, total_price: 3000, start_at: DateTime.parse("24/07/2023"), end_at: DateTime.parse("24/07/2023"))
-booking_2 = Booking.create( boat_id: boat_1.id, user_id: user_6.id, total_price: 6000, start_at:DateTime.parse("12/07/2023"), end_at:DateTime.parse("16/07/2023"))
-booking_3 = Booking.create( boat_id: boat_3.id, user_id: user_8.id, total_price: 5500, start_at: DateTime.parse("18/08/2023"), end_at:DateTime.parse("24/08/2023"))
-booking_4 = Booking.create( boat_id: boat_7.id, user_id: user_9.id, total_price: 2250, start_at:DateTime.parse("07/02/2023"), end_at:DateTime.parse("16/07/2023"))
+booking_1 = Booking.create!( boat_id: boat_10.id, user_id: user_4.id, total_price: 3000, start_at: DateTime.parse("24/07/2023"), end_at: DateTime.parse("24/07/2023"), status: "Pending")
+booking_2 = Booking.create( boat_id: boat_1.id, user_id: user_6.id, total_price: 6000, start_at:DateTime.parse("12/07/2023"), end_at:DateTime.parse("16/07/2023"), status: "Pending")
+booking_3 = Booking.create( boat_id: boat_3.id, user_id: user_8.id, total_price: 5500, start_at: DateTime.parse("18/08/2023"), end_at:DateTime.parse("24/08/2023"), status: "Accepted")
+booking_4 = Booking.create( boat_id: boat_7.id, user_id: user_9.id, total_price: 2250, start_at:DateTime.parse("07/02/2023"), end_at:DateTime.parse("16/07/2023"), status: "Rejected")
 
 puts " FINISH"

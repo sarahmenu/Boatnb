@@ -1,4 +1,4 @@
-<h1>Boats#new</h1>
+<h1>Boats#create</h1>
 <%= simple_form_for([:owner, @boat]) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -9,4 +9,3 @@
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
-

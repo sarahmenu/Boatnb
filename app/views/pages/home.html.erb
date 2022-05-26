@@ -27,7 +27,7 @@
                   <%= link_to "Book now", boat_path(boat) , class:'btn btn-primary'%>
                 </div>
                 <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
               </div>
           </div>
         </div>
@@ -43,13 +43,12 @@
       </div>
   </div>
   <div class="row">
-    <% @boats.each do |boat| %>
+    <% @locations.each do |location| %>
       <div class="col-6  col-md-3">
         <div class="card bg-dark text-white my-2">
            <img class="card-img" src="https://i.picsum.photos/id/124/3504/2336.jpg?hmac=B1Avp6or9Df8vpnN4kQsGNfD66j8hH3gLtootCoTw4M" alt="Card image">
           <div class="card-img-overlay d-flex align-items-center justify-content-center">
-            <h2 class="card-title align-middle font-weight-bold text-decoration-none"> </h2>
-
+            <h2 class="card-title align-middle font-weight-bold"> <%= link_to location, boats_path(location: location ), class:'text-justify text-decoration-none text-white' %> </h2>
           </div>
         </div>
       </div>

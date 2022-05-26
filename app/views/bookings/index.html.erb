@@ -1,0 +1,23 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col">
+      <h1> Congratulation 🤘! your booking have been accepted</h1>
+      <ul class="my-5">
+        <% @tenant_bookings.each do |booking| %>
+          <li> You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %></li>
+        <% end %>
+      </ul>
+      <ul>
+          <% @owner_bookings.each do |booking| %>
+          <li>
+            <div>
+              Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %>
+            </div>
+            <%= link_to 'Accept',  accept_owner_booking_path(booking),  method: :patch, data:{ confirm: "Are you sure you want to accept this booking?"} %>
+            <%= link_to 'Decline',  cancel_owner_booking_path(booking),  method: :patch, data:{ confirm: "Are you sure you want to cancel this booking?"} %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

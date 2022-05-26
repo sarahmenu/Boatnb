@@ -10,10 +10,10 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My bookings</a>
+          <%= link_to "My bookings", my_bookings_path, class:'nav-link' %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My boats</a>
+          <%= link_to "My boats", owner_boats_path, class:'nav-link' %>
         </li>
       </ul>
       <form class="d-flex">
@@ -22,11 +22,17 @@
       </form>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
+        <% if !current_user %>
           <%= link_to "Log in", user_session_path, class:'nav-link' %>
+        <% else %>
+          <%= link_to "Log out", destroy_user_session_path,class:'nav-link' %>
+        <% end %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class:'nav-link' %>
-        </li>
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class:'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
