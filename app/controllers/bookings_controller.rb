@@ -1,16 +1,10 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
-    @user_bookings = []
-    @bookings.each do |booking|
-      if booking.user_id == current_user.id
-        @user_bookings << booking
-      end
-    end
-    return @user_bookings
+    @tenant_bookings = Booking.where(user: current_user)
+    @my_boats = Boat.where(user: current_user)
+    @owner_bookings = Booking.where(boat: @my_boats)
   end
-
 
   def new
     @booking = Booking.new
