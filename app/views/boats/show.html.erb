@@ -26,7 +26,7 @@
       <% end %>
     </div>
     <%= link_to 'Create a new boat', new_boat_path %>
-    <%= link_to 'Edit a boat',  edit_boat_path %>
-    <%= link_to_if  !@boat.bookings.any?, 'Delete a boat',  boat_path(@boat) ,  method: :delete, data:{ confirm: "are you sure ???"} %>
+    <%= link_to 'Edit boat',  edit_owner_boat_path %>
+    <%= link_to_if  !@boat.bookings.any?, 'Delete boat',  owner_boat_path(@boat) ,  method: :delete, data:{ confirm: "Are you sure you want to delete this boat?"} %>
   </div>
 </div>
