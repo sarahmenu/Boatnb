@@ -27,7 +27,7 @@
                   <%= link_to "Book now", boat_path(boat) , class:'btn btn-primary'%>
                 </div>
                 <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
               </div>
           </div>
         </div>
