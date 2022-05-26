@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
-  
+
   def show
     @booking = Booking.find(params[:booking_id])
   end
@@ -56,7 +56,7 @@ class BookingsController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
-private
+  private
 
   def booking_params
     params.require(:booking).permit(:start_at, :end_at)
