@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @boats = Boat.all
@@ -16,7 +16,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
-
+    @boat.user = current_user
     if @boat.save
       redirect_to boats_path
     else
@@ -48,6 +48,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :location, :price, :category, :capacity)
+    params.require(:boat).permit(:name, :location, :price, :category, :capacity, :description , :photo)
   end
 end

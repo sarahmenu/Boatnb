@@ -27,6 +27,6 @@
     </div>
     <%= link_to 'Create a new boat', new_boat_path %>
     <%= link_to 'Edit a boat',  edit_boat_path %>
-    <%= link_to 'Delete a boat',  '/' %>
+    <%= link_to_if  !@boat.bookings.any?, 'Delete a boat',  boat_path(@boat) ,  method: :delete, data:{ confirm: "are you sure ???"} %>
   </div>
 </div>

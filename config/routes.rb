@@ -6,13 +6,13 @@ Rails.application.routes.draw do
     resources :bookings
   end
   get :my_bookings, to: "bookings#my_bookings"
-  # namespace :owner do
-  #   resources :boats, only: [ :create, :update ]
-  #   resources :bookings do
-  #     member do
-  #       patch :cancel
-  #       patch :accept
-  #     end
-  #   end
-  # end
+  namespace :owner do
+    resources :boats, only: [ :create, :update ]
+    resources :bookings do
+      member do
+        patch :cancel
+        patch :accept
+      end
+    end
+  end
 end
