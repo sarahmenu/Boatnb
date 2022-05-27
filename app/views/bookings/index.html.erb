@@ -28,7 +28,7 @@
         <div class="card-product">
           <%= cl_image_tag booking.boat.photo.key, height: 500, width: 400, crop: :fill  %>
           <div class="card-product-infos p-">
-            <h2>You have booked <strong><%= booking.boat.name %></strong></h2>
+            <h2><strong><%= booking.boat.name %></strong></h2>
             <p> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
             <p>Total price <strong><%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%></strong> € </p>
             <p>Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
