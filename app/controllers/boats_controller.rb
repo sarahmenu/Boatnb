@@ -2,7 +2,12 @@ class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @boats = Boat.all
+    # @boats = Boat.all
+    if params[:location]
+      @boats = Boat.where(:location => params[:location])
+    else
+      @boats = Boat.all
+    end
     @markers = @boats.geocoded.map do |boat|
       {
         lat: boat.latitude,
