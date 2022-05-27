@@ -11,7 +11,7 @@
           <% @owner_bookings.each do |booking| %>
           <li>
             <div>
-              Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %>
+              Total price =  <%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%> Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %>
             </div>
             <%= link_to 'Accept',  accept_owner_booking_path(booking),  method: :patch, data:{ confirm: "Are you sure you want to accept this booking?"} %>
             <%= link_to 'Decline',  cancel_owner_booking_path(booking),  method: :patch, data:{ confirm: "Are you sure you want to cancel this booking?"} %>
