@@ -46,6 +46,11 @@
   }
 }
 
+.footer-dark .item {
+  flex-grow: 1;
+  justify-content: center;
+}
+
 .footer-dark .item.text p {
   opacity:0.6;
   margin-bottom:0;

@@ -16,10 +16,13 @@
           <%= link_to "My boats", owner_boats_path, class:'nav-link' %>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <%= form_tag boats_path, method: :get, class: 'd-flex' do %>
+        <%= text_field_tag :location,
+            params[:location],
+            class: "form-control",
+            placeholder: "Place of departure"%>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
         <% if !current_user %>
