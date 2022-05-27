@@ -16,20 +16,21 @@
     <% @boats.each do |boat| %>
       <div class="col-12 col-md-4">
         <div class="card-boat-homepage">
-          <div class="card-trip my-2">
-              <%= cl_image_tag boat.photo.key, height: 500, width: 400, crop: :fill  %>
-              <div class="card-trip-infos">
-                <div>
-                  <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
-                  <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
-                  <h2> <%= boat.name %> </h2>
-                  <p class= "text-truncate"> <%= boat.description %> </p>
-                  <%= link_to "Book now", boat_path(boat) , class:'btn btn-primary'%>
+          <a href="<%= boat_path(boat) %>" class="text-decoration-none">
+            <div class="card-trip my-2">
+                <%= cl_image_tag boat.photo.key, height: 500, width: 400, crop: :fill  %>
+                <div class="card-trip-infos">
+                  <div>
+                    <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
+                    <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
+                    <h2> <%= boat.name %> </h2>
+                    <p class= "text-truncate"> <%= boat.description %> </p>
+                  </div>
+                  <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
+                  <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
                 </div>
-                <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
-                <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
-              </div>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     <% end %>

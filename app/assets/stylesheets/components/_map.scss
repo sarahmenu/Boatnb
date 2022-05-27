@@ -9,3 +9,10 @@
 .mapboxgl-ctrl-logo {
   display: none !important;
 }
+
+#map {
+  width: 40% !important;
+  height: 100vh !important;
+  position: sticky !important;
+  top: 0 !important;
+}
