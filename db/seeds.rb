@@ -81,15 +81,15 @@ boat_7 = Boat.create(category: "Sailing ship", name: "The Sinked Wagon - Elan 33
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396833/Boats/55_ohre6r.jpg")
 boat_7.photo.attach(io: file, filename: '55_ohre6r.jpg', content_type: 'image/jpg')
 
-boat_8 = Boat.create(category: "Motor boat", name: "Cthulhu - Quicksilver Activ 675", capacity: 6, location: "Guérande", price: 800, description: "Ready for speed", user_id: user_2.id)
+boat_8 = Boat.create(category: "Motor boat", name: "Cthulhu - Quicksilver Activ 675", capacity: 6, location: "Pornic", price: 800, description: "Ready for speed", user_id: user_2.id)
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396834/Boats/ima-powerboats-cannes-yachting-festival-bavaria-yachts-26673_bb0jel.jpg")
 boat_8.photo.attach(io: file, filename: 'ima-powerboats-cannes-yachting-festival-bavaria-yachts-26673_bb0jel.jpg', content_type: 'image/jpg')
 
-boat_9 = Boat.create(category: "Motor boat", name: "Miami Vice - Fairline Targa 33", capacity: 4, location: "Piriac", price: 650, description: "Its properties make it equally well suited for fishing, swimming, recreation and boat ride", user_id: user_2.id)
+boat_9 = Boat.create(category: "Motor boat", name: "Miami Vice - Fairline Targa 33", capacity: 4, location: "Pornic", price: 650, description: "Its properties make it equally well suited for fishing, swimming, recreation and boat ride", user_id: user_2.id)
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396834/Boats/monachus-70-fly-28097030220152525167654967654548x_e4fdrg.jpg")
 boat_9.photo.attach(io: file, filename: 'monachus-70-fly-28097030220152525167654967654548x_e4fdrg.jpg', content_type: 'image/jpg')
 
-boat_10 = Boat.create(category: "Motor boat", name: "White Shark - Bayliner 175", capacity: 5, location: "Saint Jean de Mont", price: 750, description: "Safe boat with excellent marine behavior, fast and economical navigation", user_id: user_1.id)
+boat_10 = Boat.create(category: "Motor boat", name: "White Shark - Bayliner 175", capacity: 5, location: "Pornic", price: 750, description: "Safe boat with excellent marine behavior, fast and economical navigation", user_id: user_1.id)
 file = URI.open("https://res.cloudinary.com/dpspcjurv/image/upload/v1653396834/Boats/princess-s62-30433050221768486653575268504569x_nzbcqc.jpg")
 boat_10.photo.attach(io: file, filename: 'princess-s62-30433050221768486653575268504569x_nzbcqc.jpg', content_type: 'image/jpg')
 

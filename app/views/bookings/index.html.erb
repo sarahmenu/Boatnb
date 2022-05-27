@@ -1,43 +1,48 @@
-<div class="container p-5">
-  <div class="row">
+<div class="container p-3">
+  <div class="row p-5">
     <div class="col">
-      <h1> My bookings</h1>
-      <ul class="my-5">
-        <% @tenant_bookings.each do |booking| %>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2><%= booking.boat.name %></h2>
-            <p>You have booked <strong></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
-            <div class="status">
-              <%= booking.status %>
-            </div>
-          </div>
-        </div>
 
-        <% end %>
-      </ul>
-      <ul>
-          <% @owner_bookings.each do |booking| %>
-          <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <h1 class="py-5">My booking :</h1>
+      <% @tenant_bookings.each do |booking| %>
+        <div class="card-product">
+          <%= cl_image_tag booking.boat.photo.key, height: 500, width: 400, crop: :fill  %>
           <div class="card-product-infos">
-            <h2><%= booking.boat.name %></h2>
-            <p>You have booked <strong></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
-            <div class="status">
-              <%= booking.status %>
-            </div>
+            <h2>You have booked <strong><%= booking.boat.name %></strong></h2>
+            <p> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
+            <p>Total price <strong><%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%></strong> € </p>
+            <p>Your boat <strong><%= booking.boat.name%></strong>  will be ready on <%= booking.start_at %> at <%= booking.boat.location %> </p>
+            <p>Booking status <strong><%= booking.status %></strong> </p>
           </div>
         </div>
-          <li>
-            <div>
-              Total price =  <%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%> Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %>
-            </div>
-            <%= link_to 'Accept',  accept_owner_booking_path(booking),  method: :patch, data:{ confirm: "Are you sure you want to accept this booking?"} %>
-            <%= link_to 'Decline',  cancel_owner_booking_path(booking),  method: :patch, data:{ confirm: "Are you sure you want to cancel this booking?"} %>
-          </li>
-        <% end %>
-      </ul>
+      <% end %>
+
     </div>
+
+  </div>
+</div>
+
+<div class="container p-3">
+  <div class="row p-5">
+    <div class="col">
+    <h1 class="py-5">Dashboard :</h1>
+      <% @owner_bookings.each do |booking| %>
+        <div class="card-product">
+          <%= cl_image_tag booking.boat.photo.key, height: 500, width: 400, crop: :fill  %>
+          <div class="card-product-infos">
+            <h2>You have booked <strong><%= booking.boat.name %></strong></h2>
+            <p> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
+            <p>Total price <strong><%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%></strong> € </p>
+            <p>Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
+            <p>Booking status <strong><%= booking.status %></strong> </p>
+          </div>
+        </div>
+        <div class="p-2 ">
+          <%= link_to 'Accept',  accept_owner_booking_path(booking), class:'btn btn-primary',  method: :patch, data:{ confirm: "Are you sure you want to accept this booking?"} %>
+          <%= link_to 'Decline',  cancel_owner_booking_path(booking), class:'btn btn-danger', method: :patch, data:{ confirm: "Are you sure you want to cancel this booking?"} %>
+        </div>
+      <% end %>
+
+    </div>
+
   </div>
 </div>
