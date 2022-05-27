@@ -4,11 +4,31 @@
       <h1> Congratulation 🤘! your booking have been accepted</h1>
       <ul class="my-5">
         <% @tenant_bookings.each do |booking| %>
-          <li> You have booked <strong><%= booking.boat.name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %></li>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= booking.boat.name %></h2>
+            <p>You have booked <strong></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
+            <div class="status">
+              <%= booking.status %>
+            </div>
+          </div>
+        </div>
+
         <% end %>
       </ul>
       <ul>
           <% @owner_bookings.each do |booking| %>
+          <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= booking.boat.name %></h2>
+            <p>You have booked <strong></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
+            <div class="status">
+              <%= booking.status %>
+            </div>
+          </div>
+        </div>
           <li>
             <div>
               Total price =  <%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%> Your boat <strong><%= booking.boat.name%></strong> has been booked by <strong><%= booking.user.full_name %></strong> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>. <%= booking.status %>

@@ -1,25 +1,44 @@
-<div style="width: 85%; height: 400px;margin:0 auto"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<h1>+100 motorboats available</h1>
-  <div class="container">
-    <div class="row">
-        <% @boats.each do |boat|%>
-          <div class="col-sm-12">
-          <div class="card-boat">
-            <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill  %>
-            <div class="card-boat-infos">
-              <div>
-                <h2><%= boat.name%> : <%=boat.category %></h2>
-                <p><%= boat.location%> : <%=boat.description %></p>
-              </div>
-              <h2 class="card-boat-pricing"><%= boat.price %></h2>
-              <img src="#" class="card-boat-user avatar-bordered" />
-          </div>
-          </div>
-        </div>
-      <% end %>
+<div class="container p-5">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Boats available at</h1>
     </div>
   </div>
+</div>
+<div class="container p-5">
+  <div class="row">
+    <div class="col">
+      <div style="width: 85%; height: 400px;margin:0 auto"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container p-5">
+  <div class="row">
+      <% @boats.each do |boat| %>
+    <div class="col-12 col-md-4">
+      <div class="card-boat-homepage">
+        <div class="card-trip my-2">
+            <%= cl_image_tag boat.photo.key, height: 500, width: 400, crop: :fill  %>
+            <div class="card-trip-infos">
+              <div>
+                <p class= "text-truncate"> 🧍‍♂️ <%= boat.capacity %> persons </p>
+                <p class= "text-truncate"> ⛵ Category : <%= boat.category %>  </p>
+                <h2> <%= boat.name %> </h2>
+                <p class= "text-truncate"> <%= boat.description %> </p>
+                <%= link_to "Book now", boat_path(boat) , class:'btn btn-primary'%>
+              </div>
+              <h2 class="card-trip-pricing"> <%= boat.price %>  <strong>€</strong> </h2>
+              <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
