@@ -16,7 +16,7 @@
     <% @boats.each do |boat| %>
       <div class="col-12 col-md-4">
         <div class="card-boat-homepage">
-          <a href="<%= boat_path(boat) %>" class="text-decoration-none">
+          <%= link_to boat_path(boat), class: "link-dark text-decoration-none" do %>
             <div class="card-trip my-2">
                 <%= cl_image_tag boat.photo.key, height: 500, width: 400, crop: :fill  %>
                 <div class="card-trip-infos">
@@ -30,7 +30,7 @@
                   <%=  cl_image_tag boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
                 </div>
             </div>
-          </a>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -51,7 +51,7 @@
     <% @locations.each do |location| %>
       <div class="col-6  col-md-3">
         <div class="card bg-dark text-white my-2">
-           <img class="card-img" src="https://i.picsum.photos/id/124/3504/2336.jpg?hmac=B1Avp6or9Df8vpnN4kQsGNfD66j8hH3gLtootCoTw4M" alt="Card image">
+            <%= image_tag "photo-#{location}.jpg" , height: 200  %>
           <div class="card-img-overlay d-flex align-items-center justify-content-center">
             <h2 class="card-title align-middle font-weight-bold"> <%= link_to location, boats_path(location: location), class:'text-justify text-decoration-none text-white' %> </h2>
           </div>
