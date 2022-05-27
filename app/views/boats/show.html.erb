@@ -7,14 +7,14 @@
           <%= cl_image_tag @boat.photo.key %>
           <div class="card-trip-infos my-5">
             <div>
-              <p>⛵ Category : <%= @boat.category %></p>
-              <h1><%= @boat.name %></h1>
+              <p>⚓ Location : <strong><%= @boat.location %></strong></p>
+              <p>⛵ Category :  <strong><%= @boat.category %></strong></p>
+              <h1> <%= @boat.name %></h1>
               <p>🧍‍♂️ <%= @boat.capacity %> persons </p>
               <p>🧑‍✈️ Offered by <%= @boat.user.full_name  %>  </p>
             </div>
             <h2 class="card-trip-pricing"><%= @boat.price%> €</h2>
             <%=  cl_image_tag @boat.user.photo.key, class:'card-trip-user avatar-bordered'%>
-            raise
           </div>
           <p class="my-2"> <%= @boat.description %> </p>
           <div>

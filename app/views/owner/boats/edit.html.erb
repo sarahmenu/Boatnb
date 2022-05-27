@@ -1,11 +1,17 @@
-<h1>Owner Boats#edit</h1>
-<%= simple_form_for([:owner, @boat]) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :category, collection: Boat::CATEGORIES, as: :radio_buttons%>
-  <%= f.input :capacity %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <h1>Edit your Boat</h1>
+    <div class="col">
+      <%= simple_form_for([:owner, @boat]) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :location %>
+        <%= f.input :category, collection: Boat::CATEGORIES, as: :radio_buttons%>
+        <%= f.input :capacity %>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

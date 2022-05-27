@@ -1,12 +1,11 @@
 <div class="container p-3">
   <div class="row p-5">
     <div class="col">
-
-      <h1 class="py-5">My booking :</h1>
+      <h1 class="py-5">My bookings</h1>
       <% @tenant_bookings.each do |booking| %>
         <div class="card-product">
           <%= cl_image_tag booking.boat.photo.key, height: 500, width: 400, crop: :fill  %>
-          <div class="card-product-infos">
+          <div class="card-product-infos p-5">
             <h2>You have booked <strong><%= booking.boat.name %></strong></h2>
             <p> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
             <p>Total price <strong><%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%></strong> € </p>
@@ -21,14 +20,14 @@
   </div>
 </div>
 
-<div class="container p-3">
-  <div class="row p-5">
+<div class="container p-5">
+  <div class="row">
     <div class="col">
-    <h1 class="py-5">Dashboard :</h1>
+    <h1 class="py-5">Dashboard</h1>
       <% @owner_bookings.each do |booking| %>
         <div class="card-product">
           <%= cl_image_tag booking.boat.photo.key, height: 500, width: 400, crop: :fill  %>
-          <div class="card-product-infos">
+          <div class="card-product-infos p-">
             <h2>You have booked <strong><%= booking.boat.name %></strong></h2>
             <p> from <strong><%= booking.start_at %></strong> to <strong><%= booking.end_at %></strong>.</p>
             <p>Total price <strong><%= ((booking.end_at - booking.start_at) * booking.boat.price ).to_i%></strong> € </p>
@@ -37,12 +36,11 @@
           </div>
         </div>
         <div class="p-2 ">
-          <%= link_to 'Accept',  accept_owner_booking_path(booking), class:'btn btn-primary',  method: :patch, data:{ confirm: "Are you sure you want to accept this booking?"} %>
-          <%= link_to 'Decline',  cancel_owner_booking_path(booking), class:'btn btn-danger', method: :patch, data:{ confirm: "Are you sure you want to cancel this booking?"} %>
+          <%= link_to 'Accept',  accept_owner_booking_path(booking), class:'btn btn-outline-success',  method: :patch, data:{ confirm: "Are you sure you want to accept this booking?"} %>
+          <%= link_to 'Decline',  cancel_owner_booking_path(booking), class:'btn btn-outline-danger', method: :patch, data:{ confirm: "Are you sure you want to cancel this booking?"} %>
         </div>
       <% end %>
 
     </div>
-
   </div>
 </div>
