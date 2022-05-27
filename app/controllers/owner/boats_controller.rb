@@ -30,8 +30,7 @@ class Owner::BoatsController < ApplicationController
   def destroy
     @boat = Boat.find(params[:id])
     @boat.destroy
-
-    redirect_to root_path, status: :see_other
+    redirect_to owner_boats_path
   end
 
   private
