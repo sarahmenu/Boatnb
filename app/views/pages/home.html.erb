@@ -3,7 +3,8 @@
 <div class="container p-5">
   <div class="row">
     <div class="col">
-      <h2>About Boatnb</h2>
+      <h2 class="my-5">About Boatnb</h2>
+      <hr class="my-5">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate architecto suscipit mollitia. Laudantium iste quae minus asperiores eveniet? Temporibus sunt voluptatum ad, sint ipsam doloremque est debitis error reprehenderit, rem ducimus, eveniet modi quia nam accusamus nostrum cum cupiditate? Voluptas ipsum cum, inventore perferendis aut rerum molestiae, animi sed voluptatibus, provident mollitia dolor ratione doloribus asperiores eligendi possimus nesciunt. Aut incidunt, hic sit ullam eius explicabo. Nesciunt numquam assumenda cum deserunt pariatur, dolore quas fuga aliquid porro aut quos quam tempora odit iure odio incidunt natus quo nihil, doloremque distinctio voluptas quia sit. Maiores illo omnis suscipit voluptatibus sequi consequuntur quia magni nulla error, laudantium, blanditiis recusandae odio ullam ipsum quidem eius obcaecati perspiciatis fugit nisi velit quis dignissimos qui rerum minus! Sint fugiat velit iusto maxime fuga eveniet a, amet quam sapiente nihil modi nemo, mollitia corporis. Alias quisquam, voluptate dignissimos dolores labore optio porro ratione minus numquam repellendus natus temporibus inventore, deserunt, modi est maxime quidem perspiciatis assumenda sapiente quae ad? Rem, error unde reprehenderit eaque cupiditate dignissimos dolorem ab recusandae magnam vero delectus quos vitae perferendis enim.</p>
     </div>
     <div class="col">
@@ -16,9 +17,9 @@
 <div class="container p-5">
   <div class="row">
     <div class="col text-center">
-      <h2 id='anchor'> Browse our exclusive boat collection </h2>
-      <P>More than 40,000 private yacht rentals and bareboat charters worldwide for your next boating trip</P>
-      <hr>
+      <h2 class="my-5" id='anchor'> Browse our exclusive boat collection </h2>
+      <P class="my-5">More than 40,000 private yacht rentals and bareboat charters worldwide for your next boating trip</P>
+      <hr class="my-5">
     </div>
   </div>
   <div class="row">
@@ -57,9 +58,9 @@
 <div class="container p-5">
   <div class="row">
       <div class="col text-center">
-        <h2> Most viewed locations </h2>
-        <P>More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
-        <hr>
+        <h2 class="my-5"> Most viewed locations </h2>
+        <P class="my-5">More than 40,000 private yacht rentals and bareboat charters near me and worldwide for your next boating trip</P>
+        <hr class="my-5">
       </div>
   </div>
 </div>
@@ -68,7 +69,7 @@
   <div class="row">
     <% @locations.each do |location| %>
       <div class="col-6  col-md-3">
-        <div class="card bg-dark text-white my-2">
+        <div class="card card-location bg-dark text-white my-2">
             <%= image_tag "photo-#{location}.jpg" , height: 200  %>
           <div class="card-img-overlay d-flex align-items-center justify-content-center">
             <h2 class="card-title align-middle font-weight-bold"> <%= link_to location, boats_path(location: location), class:'text-justify text-decoration-none text-white' %> </h2>
@@ -83,9 +84,9 @@
 <div class="container p-5">
   <div class="row">
     <div class="col text-center">
-      <h2>Customers reviews </h2>
-      <P>Each of our customers has kept wonderful memories thanks to their experiences with boatnb</P>
-      <hr>
+      <h2 class="my-5">Customers reviews </h2>
+      <P class="my-5">Each of our customers has kept wonderful memories thanks to their experiences with boatnb</P>
+      <hr class="my-5">
     </div>
   </div>
 </div>
@@ -140,9 +141,9 @@
 <div class="container p-5">
   <div class="row text-center">
     <div class="col">
-      <h2>Contact us</h2>
-      <p>Do you have a request? Send us an email, our customer service will answer you as soon as possible</p>
-      <hr>
+      <h2 class="my-5">Contact us</h2>
+      <p class="my-5">Do you have a request? Send us an email, our customer service will answer you as soon as possible</p>
+      <hr class="my-5">
     </div>
   </div>
 </div>

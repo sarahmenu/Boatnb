@@ -4,12 +4,14 @@ import mapboxgl from "mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
   }
 
   connect() {
     console.log('hi')
+    console.log(this.apiKeyValue)
     mapboxgl.accessToken = this.apiKeyValue
+
 
     this.map = new mapboxgl.Map({
       container: this.element,
