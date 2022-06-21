@@ -2,15 +2,16 @@
 .card-boat-homepage {
 
   .card-trip {
-    padding: 16px;
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
   }
 
   .card-trip > img {
     height: 200px;
     width: 100%;
+    padding-bottom: 1rem;
     object-fit: cover;
   }
 
@@ -32,12 +33,13 @@
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
+    padding:  1rem;
   }
 
   .card-trip-infos .card-trip-user {
     position: absolute;
     right: 16px;
-    top: -20px;
+    top: -35px;
     width: 40px;
   }
 }
