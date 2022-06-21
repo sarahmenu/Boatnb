@@ -1,23 +1,46 @@
-<div class="footer-dark">
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-md-3 item">
-            <h3>Services</h3>
-            <ul>
-                <li><%= link_to "My bookings", my_bookings_path%></li>
-                <li><%= link_to "My boats", owner_boats_path %></li>
-            </ul>
-        </div>
-        <div class="col-sm-6 col-md-3 item">
-            <h3>About</h3>
-            <ul>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Careers</a></li>
-            </ul>
-        </div>
-      <p class="copyright">BoatnB © 2022</p>
+<footer class="footer-dark ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 pr-md-5">
+        <a href="/" class="footer-site-logo d-block mb-4"><h2>BoatNb</h2></a>
+        <%= image_tag "sailor-icon-11-915042515.png" , height: 100  %>
+        <p>Share and discover the boating lifestyle</p>
+      </div>
+      <div class="col-md">
+        <ul class="list-unstyled nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">My bookings</a></li>
+          <li><a href="#">My boats</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <ul class="list-unstyled nav-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="col-md text-md-center">
+        <ul class="social list-unstyled">
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+          <li><a href="#"><i class="fas fa-basketball-ball"></i></a></li>
+        </ul>
+        <p class="/"><a href="#" class="btn btn-tertiary">Contact Us</a></p>
+      </div>
     </div>
-  </footer>
-</div>
+    <hr>
+    <div class="row ">
+      <div class="col-12 text-center">
+        <div class="copyright mt-5 pt-5">
+        <p>Made with ❤️ by Lucas Vittaz, Sarah Menu, Anthony Gouvrillon</p>
+        <p><small>© 2022 BoatNb All Rights Reserved.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
